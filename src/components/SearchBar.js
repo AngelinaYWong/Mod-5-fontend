@@ -28,7 +28,6 @@ class SearchBar extends Component {
       })
       this.props.makeSearch(searchResults);
       // console.log(data)
-
     });
   }
 
@@ -38,7 +37,7 @@ class SearchBar extends Component {
 
   render() {
     return(
-    <div>
+    <div id="search-bar">
       <form onSubmit={this.handleSubmit} >
         <input onChange={this.handleChange} type="text" search="search"/>
         <input type="submit" value="Submit" />

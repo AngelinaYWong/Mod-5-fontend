@@ -1,17 +1,20 @@
+
 .App {
+  /* display: grid;
   text-align: center;
+  grid-template-areas: "l lm rm r"; */
+  background-color: #f9f4d1;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
   background-color: #222;
+  justify-content: center;
   height: 150px;
   padding: 20px;
+  width: 100vw;
   color: white;
+  position: absolute;
 }
 
 .App-title {
@@ -20,6 +23,48 @@
 
 .App-intro {
   font-size: large;
+}
+
+#search-bar {
+  position: absolute;
+  /* display: flex; */
+  justify-content: center;
+  padding-left: 10vw
+}
+
+#image-list {
+  padding-top: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+  /* grid-template-columns: 33vw 33vw 33vw;
+  grid-template-areas: "l m r"; */
+  /* grid-template-columns: 50vw 50vw;
+  grid-template-areas: "l r"; */
+  text-align: center;
+  background-color: #f9f4d1;
+}
+.image-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33vw;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+}
+.image-card img:hover {
+  opacity: 0.5;
+}
+
+.plus-button {
+  background: transparent;
+  padding: 0.5rem;
+  font-size: 1em;
 }
 
 @keyframes App-logo-spin {
