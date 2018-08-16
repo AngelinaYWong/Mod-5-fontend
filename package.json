@@ -5,10 +5,13 @@
   "dependencies": {
     "behance-api": "^1.1.4",
     "dotenv": "^6.0.0",
+    "luminous-lightbox": "^2.2.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-images": "^0.5.19",
     "react-scripts": "1.1.4",
-    "requirejs": "^2.3.5"
+    "requirejs": "^2.3.5",
+    "semantic-ui-react": "^0.82.2"
   },
   "scripts": {
     "start": "react-scripts start",

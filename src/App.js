@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
+import NavBar from './components/NavBar';
 import SearchResultsContainer from './components/SearchResultsContainer';
-import SearchBar from './components/SearchBar';
+
+// import Lightbox from 'react-images';
 import './App.css';
 
 
 class App extends Component {
+
+
   render() {
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title"> MOD 5 PROJECT WORKING TITLE</h1>
-        </header>
+      <React.Fragment>
+        <div className="App">
 
-        <SearchBar />
+          <NavBar  />
 
-        <SearchResultsContainer />
-      </div>
+        </div>
+
+      </React.Fragment>
     );
   }
 }

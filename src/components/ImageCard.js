@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
+import '../stylesheets/imagecard.css';
+// import Lightbox from 'react-images';
+
 
 class ImageCard extends Component {
+
+
+  handleClick = () => {
+
+  }
+
   render() {
     return(
-      <div className="image-card">
-        <button type="button" className="plus-button btn btn-outline-secondary">+</button> 
-        <img src={ this.props.item.image } />
+      <div id="container" className="image-card">
+        <button id="button" className="plus-button">+</button>
+
+        <img id="pic" src={ this.props.images.image } />
+
       </div>
     )
   }
 }
+
+
 
 export default ImageCard

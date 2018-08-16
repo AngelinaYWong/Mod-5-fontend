@@ -1,9 +1,34 @@
-.imageCard {
-  width: 25%vh;
-  height: relative;
+.image-card {
+  /* z-index: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  max-height: 50vh;
+  overflow: hidden;
+
 }
 
-src {
-  width: 25vw;
-  height: relative;
+.image-card img {
+  /* z-index: 0; */
+  width: 100%;
 }
+.image-card img:hover {
+  opacity: 0.5;
+}
+
+.plus-button {
+  background: transparent;
+  padding: 1rem;
+  font-size: 1.2em;
+  position: absolute;
+
+}
+/*
+#plus-button button {
+  visibility: hidden;
+
+}
+#plus-button button:hover {
+  visibility: visible;
+} */
