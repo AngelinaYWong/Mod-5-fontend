@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 import SearchResultsContainer from './SearchResultsContainer';
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   state = { visible: false }
 
   handleButtonClick = () => this.setState({ visible: !this.state.visible })
@@ -28,18 +30,21 @@ export default class NavBar extends Component {
             visible={visible}
             width='thin'
           >
-            <Menu.Item as='a'>
+            <Menu.Item as={Link}  to='/profile'>
               <Icon name='home' />
-              Profile
+                Profile
             </Menu.Item>
-            <Menu.Item as='a'>
+
+            <Menu.Item as={Link} to='/board'>
               <Icon name='th' />
               Boards
             </Menu.Item>
-            <Menu.Item as='a'>
-              <Icon name='camera' />
-              Channels
+
+            <Menu.Item as={Link} to='/library'>
+              <Icon name='images outline' />
+              Library
             </Menu.Item>
+
           </Sidebar>
 
           <Sidebar.Pusher>
@@ -55,3 +60,18 @@ export default class NavBar extends Component {
     )
   }
 }
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     showBoards: () => { dispatch(showBoards())},
+//     showSearchContainer: () => { dispatch(showSearchContainer())}
+//   }
+// }
+
+const mapStateToProps  = (state) => {
+  return {
+    clickedView: state.clickedView
+  }
+}
+
+
+export default connect(mapStateToProps, null)(NavBar);

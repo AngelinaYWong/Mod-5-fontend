@@ -1,7 +1,8 @@
 const initialState = {
   searchList: [],
+  // showBoards: false,
   selectedBoard: '',
-
+  clickedView: 'Search',
 }
 
 export const reducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ export const reducer = (state = initialState, action) => {
     case 'SEARCH_STATE_CHANGE':
     // console.log(action.payload)
       return { ...state, searchList: action.payload }
-
+    case 'CLICK_BOARD_BUTTON':
+      return { ...state, clickedView: action.payload }
     default:
     return state;
   }
