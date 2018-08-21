@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Image, Reveal } from 'semantic-ui-react'
+import { Image, Reveal } from 'semantic-ui-react';
+import { connect } from 'react-redux'
 import '../stylesheets/imagecard.css';
 import ImageCard from './ImageCard';
 
@@ -7,28 +8,32 @@ class ImageOverlay extends Component {
 
   handleClick = (e) => {
     const name = this.props.name
-    const id = this.props.imgId
-    const image = this.props.imageLink
+    const ImgId = this.props.imgId
+    const src = this.props.imageLink
+    const boardId = this.props.selectedBoard
 
-    fetch('http://localhost:4000/api/v1/images/create', {
+    fetch('http://localhost:4000/api/v1/images/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
         accept: 'application/json'
       },
       body: JSON.stringify({
-        image: {name, id, image}
+        image: {name, ImgId, src}
       })
     })
-    .then(resp => {
-      fetch('http://localhost:4000/api/v1/boardimage/create', {
+    .then(resp => resp.json())
+    .then(data => {
+      fetch('http://localhost:4000/api/v1/board_images/', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
+          'Access-Control-Allow-Origin':'*',
           accept: 'application/json'
         },
         body: JSON.stringify({
-          boardimage: {boardId, id}
+          board_image: {board_id: boardId, image_id: data.id}
         })
       })
     })
