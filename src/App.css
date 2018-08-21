@@ -34,7 +34,7 @@
 
 #image-list {
   z-index: -1;
-  padding-top: 50px;
+  padding-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -45,5 +45,9 @@
   grid-template-areas: "l r"; */
   text-align: center;
   background-color: #fff8dd;
+  min-height: 100vh;
+}
+
+#NavBar {
   min-height: 100vh;
 }

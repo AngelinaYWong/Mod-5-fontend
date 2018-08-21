@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import imageCard from './ImageCard';
-import { connect } from 'react-redux';
+// import imageCard from './ImageCard';
+// import { connect } from 'react-redux';
+import ColorWheel from 'color-wheel';
 
 class Board extends Component {
 
@@ -10,8 +11,8 @@ class Board extends Component {
 
   render() {
     return(
-      <div>
-
+      <div id="BoardImage">
+        <ColorWheel onChange={color => console.log(color)} />
       </div>
     )
 

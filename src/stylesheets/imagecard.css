@@ -10,7 +10,7 @@
 }
 
 .image-card img {
-  /* z-index: 0; */
+  z-index: 0;
   width: 100%;
 }
 .image-card img:hover {
@@ -23,6 +23,30 @@
   font-size: 1.2em;
   position: absolute;
 
+}
+
+.overlay {
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  /* width: 100%;
+  height: 100%; */
+}
+
+.overlay button {
+  opacity: 1;
+  z-index: 1;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  background: transparent;
+}
+
+.overlay button:hover {
+  opacity:1;
+  height: 10vh;
+  width: 5vw;
+  font-size: 1.2em;
 }
 /*
 #plus-button button {

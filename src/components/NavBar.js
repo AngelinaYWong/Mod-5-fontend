@@ -1,25 +1,53 @@
-import React, { Component } from 'react';
-import { Button, Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import React, { Component, Fragment } from 'react';
+import { Button, Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchResultsContainer from './SearchResultsContainer';
+import Board from './Board';
 import SearchBar from './SearchBar';
-import { Link } from 'react-router-dom';
+import Profile from './Profile';
+import { Route, Switch, NavLink } from 'react-router-dom';
+
 
 class NavBar extends Component {
-  state = { visible: false }
+
+  state = {
+    visible: false,
+    clickedButton: 'home',
+   }
+
+  handleProfileClick= () => this.setState({ clickedButton: 'profile' })
+
+  handleBoardClick= () => this.setState({ clickedButton: 'board' })
+
+  handleSearchClick= () => this.setState({ clickedButton: 'home' })
 
   handleButtonClick = () => this.setState({ visible: !this.state.visible })
 
   handleSidebarHide = () => this.setState({ visible: false })
 
+
   render() {
+
     const { visible } = this.state
 
+    const renderComponent = () => {
+      if(this.state.clickedButton === 'profile'){
+        return <Profile />
+      }
+      else if(this.state.clickedButton === 'board'){
+        return <Board />
+      }
+      else {
+        return <SearchResultsContainer />
+      }
+    }
+
     return (
-      <div>
+
+      <Fragment>
         <Button onClick={this.handleButtonClick}>MENU</Button>
 
-        <Sidebar.Pushable as={Segment}>
+        <Sidebar.Pushable as={Segment}  id='NavBar'>
           <Sidebar
             as={Menu}
             animation='push'
@@ -30,17 +58,17 @@ class NavBar extends Component {
             visible={visible}
             width='thin'
           >
-            <Menu.Item as={Link}  to='/profile'>
+            <Menu.Item onClick={this.handleProfileClick} as={NavLink} to='/profile' name="profile">
               <Icon name='home' />
-                Profile
+              Profile
             </Menu.Item>
 
-            <Menu.Item as={Link} to='/board'>
+            <Menu.Item onClick={this.handleBoardClick} as={NavLink} to='/board'>
               <Icon name='th' />
               Boards
             </Menu.Item>
 
-            <Menu.Item as={Link} to='/library'>
+            <Menu.Item onClick={this.handleSearchClick} as={NavLink} to='/search'>
               <Icon name='images outline' />
               Library
             </Menu.Item>
@@ -48,15 +76,37 @@ class NavBar extends Component {
           </Sidebar>
 
           <Sidebar.Pusher>
+
             <Segment basic>
+
               <Header as='h3'>
-                <SearchBar />
+
+
               </Header>
-              <SearchResultsContainer />
+
+
+              {renderComponent()}
+
+                {/* <Switch>
+
+                  <Route exact path='/'/>
+
+                  <Route path='/profile' component={ Profile } />
+
+                  <Route path='/board' component={ Board } />
+
+                  <Route path='/search' component={SearchResultsContainer} />
+
+                </Switch> */}
+
+
+
             </Segment>
+
           </Sidebar.Pusher>
         </Sidebar.Pushable>
-      </div>
+
+      </Fragment>
     )
   }
 }

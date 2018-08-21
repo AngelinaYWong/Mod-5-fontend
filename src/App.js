@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import SearchResultsContainer from './components/SearchResultsContainer';
 import Profile from './components/Profile'
 import Board from './components/Board'
-import { Route, Switch, Link } from 'react-router-dom';
+// import { Route, Switch, Link } from 'react-router-dom';
 // import Lightbox from 'react-images';
 import './App.css';
 
@@ -15,11 +15,10 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <div className="App">
 
           <NavBar />
 
-          <div>
+          {/* <div>
             <Switch>
               <Route exact path='/'/>
               <Route path='/profile' component={ Profile } />
@@ -27,8 +26,7 @@ class App extends Component {
               <Route path='/search' component={SearchResultsContainer} />
 
             </Switch>
-          </div>
-        </div>
+          </div> */}
 
       </React.Fragment>
     );

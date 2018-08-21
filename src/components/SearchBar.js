@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form } from 'semantic-ui-react'
 // import imageCard from './imageCard';
 import { connect } from 'react-redux';
 import { config } from '../config';
@@ -27,7 +28,7 @@ class SearchBar extends Component {
         }
       })
       this.props.makeSearch(searchResults);
-      // console.log(data)
+      console.log(data)
     });
   }
 
@@ -38,10 +39,10 @@ class SearchBar extends Component {
   render() {
     return(
     <div id="search-bar">
-      <form onSubmit={this.handleSubmit} >
+      <Form onSubmit={this.handleSubmit} >
         <input onChange={this.handleChange} type="text" search="search"/>
-        <input type="submit" value="Submit" />
-      </form>
+        <Button type="submit">Search</Button>
+      </Form>
     </div>
   )}
 
