@@ -48,22 +48,6 @@
   min-height: 100vh;
 }
 
-#BoardImageContainer {
-  z-index: -1;
-  padding-top: 70px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  text-align: center;
-  /* grid-template-columns: 33vw 33vw 33vw;
-  grid-template-areas: "l m r"; */
-  /* grid-template-columns: 50vw 50vw;
-  grid-template-areas: "l r"; */
-  text-align: center;
-  background-color: #fff8dd;
-  min-height: 100vh;
-}
-
 #NavBar {
   min-height: 100vh;
 }

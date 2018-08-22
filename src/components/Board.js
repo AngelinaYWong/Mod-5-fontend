@@ -3,13 +3,14 @@ import { Card, Image } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';
-import '../stylesheets/semantic.css';
+import '../stylesheets/board.css';
 
 
 class Board extends Component {
 
   state = {
-    pictures: []
+    pictures: [],
+    background: '#fff',
   }
 
   componentDidMount() {
@@ -30,16 +31,21 @@ class Board extends Component {
 
     return dinosaur
   }
+  handleChangeComplete = (color) => {
+    this.setState({ background: color.hex }, () => console.log(this.state.background))}
+
+  // handleColorChange = () => this.setState({ color: color.hex })
 
   render() {
 
     return(
 
-      <div id="BoardImageContainer">
+      <div id="BoardImageContainer" style={{backgroundColor:`${this.state.background}`}} >
 
         { this.displayPictures() }
 
-        <SketchPicker />
+        <SketchPicker color={ this.state.background } onChange={ this.handleChangeComplete }/>
+
 
       </div>
     )
