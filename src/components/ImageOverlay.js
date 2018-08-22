@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Image, Reveal } from 'semantic-ui-react';
+// import { Image, Reveal } from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import '../stylesheets/imagecard.css';
-import ImageCard from './ImageCard';
+
 
 class ImageOverlay extends Component {
 
@@ -25,7 +25,7 @@ class ImageOverlay extends Component {
     })
     .then(resp => resp.json())
     .then(data => {
-      fetch('http://localhost:4000/api/v1/board_images/', {
+      fetch('http://localhost:4000/api/v1/posts/', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -33,7 +33,7 @@ class ImageOverlay extends Component {
           accept: 'application/json'
         },
         body: JSON.stringify({
-          board_image: {board_id: boardId, image_id: data.id}
+          post: {board_id: boardId, image_id: data.id}
         })
       })
     })

@@ -3,9 +3,9 @@ import { Button, Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import SearchResultsContainer from './SearchResultsContainer';
 import Board from './Board';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 import Profile from './Profile';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class NavBar extends Component {

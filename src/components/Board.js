@@ -5,9 +5,14 @@ import ColorWheel from 'color-wheel';
 
 class Board extends Component {
 
+  state = {
+    
+  }
+
   componentDidMount() {
 
   }
+
 
   render() {
     return(
@@ -17,6 +22,8 @@ class Board extends Component {
     )
 
   }
+
+  // need to unmount board when clicking away
 
 }
 export default Board
