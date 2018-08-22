@@ -9,11 +9,11 @@ class ImageCard extends Component {
 
   handleClick = (e) => {
     e.preventDefault;
-    console.log(this.props.images.id)
+    // console.log(this.props.images.id)
   }
 
   render() {
-    console.log(this.props.images)
+    // console.log(this.props.images)
     return(
       <div id="container" className="image-card">
 

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // import ColorWheel from 'color-wheel';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';
+import '../stylesheets/imagecard.css';
 
 class Board extends Component {
 
@@ -23,14 +24,14 @@ class Board extends Component {
   displayPictures = () => {
     console.log("DISPLAY THEM")
     let dinosaur = this.state.pictures.map((images) => <ImageCard images={images} />)
-    console.log(dinosaur)
+    // console.log(dinosaur)
     return dinosaur
   }
 
   render() {
 
     return(
-      
+
       <div id="BoardImageContainer">
 
         { this.displayPictures() }
