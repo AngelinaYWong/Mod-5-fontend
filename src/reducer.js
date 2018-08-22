@@ -2,6 +2,7 @@ const initialState = {
   searchList: [],
   // showBoards: false,
   selectedBoard: '1',
+  background: '#fff',
   // clickedView: 'Search',
 }
 

@@ -16,6 +16,10 @@ class Board extends Component {
   componentDidMount() {
     // console.log('component',this.props.selectedBoard)
     // console.log(this.props)
+    let getColor = localStorage.getItem('color')
+    if (getColor)
+      {this.setState({background: getColor})}
+
     this.props.getBoard(this.props.selectedBoard)
     fetch(`http://localhost:4000/api/v1/boards/${this.props.selectedBoard}`)
     .then(r=>r.json())
@@ -32,7 +36,11 @@ class Board extends Component {
     return dinosaur
   }
   handleChangeComplete = (color) => {
-    this.setState({ background: color.hex }, () => console.log(this.state.background))}
+    this.setState({ background: color.hex }, () => {
+      console.log(this.state.background)
+      if (color)
+      { localStorage.setItem('color', color.hex) }
+    })}
 
   // handleColorChange = () => this.setState({ color: color.hex })
 

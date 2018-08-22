@@ -1,15 +1,16 @@
 .ui.card {
   height: 45vh;
   width: 25vw;
-  border: 2px;
+  border: 8px;
+  border-color: white;
   overflow: hidden;
   justify-content: center;
 }
 
-.ui.card.img {
+/* .ui.card img {
   height: 100%;
   width: 100%;
-}
+} */
 
 #BoardImageContainer {
   z-index: -1;
