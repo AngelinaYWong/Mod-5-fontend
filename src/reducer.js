@@ -13,7 +13,7 @@ export const reducer = (state = initialState, action) => {
     // case 'CLICK_BOARD_BUTTON':
     //   return { ...state, clickedView: action.payload }
     case 'GET_BOARD':
-      console.log(action.payload)
+      // console.log(action.payload)
       return { ...state, selectedBoard: action.payload }
     default:
     return state;

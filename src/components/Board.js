@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ImageCard from './ImageCard';
+import { Card, Image } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-// import ColorWheel from 'color-wheel';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';
-import '../stylesheets/imagecard.css';
+import '../stylesheets/semantic.css';
+
 
 class Board extends Component {
 
@@ -22,9 +22,12 @@ class Board extends Component {
   }
 
   displayPictures = () => {
-    console.log("DISPLAY THEM")
-    let dinosaur = this.state.pictures.map((images) => <ImageCard images={images} />)
-    // console.log(dinosaur)
+
+    let dinosaur = this.state.pictures.map((image) =>
+    <Card>
+      <Image src={image.src} />
+    </Card>)
+
     return dinosaur
   }
 

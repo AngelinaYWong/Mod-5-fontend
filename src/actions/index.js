@@ -20,7 +20,7 @@ export const showSearchContainer = (searchContainerClick) => {
 }
 
 export const getBoard = (board_id) => {
-  console.log("board_id", board_id)
+  // console.log("board_id", board_id)
 
   return {
     type: 'GET_BOARD',
