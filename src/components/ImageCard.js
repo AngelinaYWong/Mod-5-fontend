@@ -13,15 +13,15 @@ class ImageCard extends Component {
   }
 
   render() {
-
+    console.log(this.props.images)
     return(
       <div id="container" className="image-card">
 
         <ImageOverlay className="overlay" imgId={ this.props.images.id }
           name={ this.props.images.name }
-          imageLink={ this.props.images.image }/>
+          imageLink={ this.props.images.image || this.props.images.src }/>
 
-        <img onClick={(e) => this.handleClick(e)} src={ this.props.images.image } />
+        <img onClick={(e) => this.handleClick(e)} src={  this.props.images.image || this.props.images.src } />
 
       </div>
     )
