@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Button, Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Button, Header, Icon, Menu, Segment, Sidebar, Sticky } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchResultsContainer from './SearchResultsContainer';
 import Board from './Board';
@@ -43,11 +43,13 @@ class NavBar extends Component {
     }
 
     return (
-
       <Fragment>
+
+
         <Button onClick={this.handleButtonClick}>MENU</Button>
 
         <Sidebar.Pushable as={Segment}  id='NavBar'>
+
           <Sidebar
             as={Menu}
             animation='push'
@@ -69,7 +71,7 @@ class NavBar extends Component {
             </Menu.Item>
 
             <Menu.Item onClick={this.handleSearchClick} as={NavLink} to='/search'>
-              <Icon name='images outline' />
+              <Icon name='search' />
               Library
             </Menu.Item>
 
@@ -85,7 +87,7 @@ class NavBar extends Component {
               </Header>
 
 
-              {renderComponent()}
+              { renderComponent() }
 
                 {/* <Switch>
 
@@ -107,6 +109,7 @@ class NavBar extends Component {
         </Sidebar.Pushable>
 
       </Fragment>
+
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Dimmer } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';
@@ -35,14 +35,13 @@ class Board extends Component {
 
     return dinosaur
   }
+
   handleChangeComplete = (color) => {
     this.setState({ background: color.hex }, () => {
       console.log(this.state.background)
       if (color)
       { localStorage.setItem('color', color.hex) }
     })}
-
-  // handleColorChange = () => this.setState({ color: color.hex })
 
   render() {
 
@@ -54,14 +53,9 @@ class Board extends Component {
 
         <SketchPicker color={ this.state.background } onChange={ this.handleChangeComplete }/>
 
-
       </div>
     )
-
   }
-
-  // need to unmount board when clicking away
-
 }
 
 const mapStateToProps = (state) => {

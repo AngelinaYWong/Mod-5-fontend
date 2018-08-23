@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 // import Profile from './components/Profile'
 // import Board from './components/Board'
 // import { Route, Switch, Link } from 'react-router-dom';
-// import Lightbox from 'react-images';
+import { Header, Icon } from 'semantic-ui-react'
 import './App.css';
 
 
@@ -16,7 +16,12 @@ class App extends Component {
     return (
       <React.Fragment>
 
-          <NavBar />
+        <Header as='h2'>
+          <Icon name='images outline' />
+          <Header.Content>Mood Board</Header.Content>
+        </Header>
+
+        <NavBar />
 
           {/* <div>
             <Switch>

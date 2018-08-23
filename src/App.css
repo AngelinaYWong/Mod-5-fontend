@@ -50,4 +50,18 @@
 
 #NavBar {
   min-height: 100vh;
+
+}
+
+.ui.header {
+  background-color: black;
+  color: white;
+}
+
+.ui.fluid {
+  z-index: 1;
+  position: absolute;
+  right: 25%;
+  background: black;
+  outline: red;
 }

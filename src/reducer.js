@@ -1,9 +1,6 @@
 const initialState = {
   searchList: [],
-  // showBoards: false,
   selectedBoard: '1',
-  background: '#fff',
-  // clickedView: 'Search',
 }
 
 export const reducer = (state = initialState, action) => {
