@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../stylesheets/imagecard.css';
 import ImageOverlay from './ImageOverlay';
-import { Image } from 'semantic-ui-react';
 // import Lightbox from 'react-images';
 
 

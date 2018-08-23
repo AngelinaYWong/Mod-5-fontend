@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import SearchBar from './SearchBar';
-import { Image, Segment } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import Dimmer from './Dimmer';
 // import Lightbox from 'react-images';
 
@@ -15,26 +15,13 @@ class SearchResultsContainer extends Component {
     this.setState({ clickedPhoto: e.target.id })
   }
 
-
+  closeImage = (e) => {
+    if (this.state.clickedPhoto === e.target.id) {
+      this.setState({ clickedPhoto: '' })
+    }
+  }
 
   render() {
-
-
-
-    const renderLargeImage = () => {
-      if (this.state.clickedPhoto !== '') {
-        return
-        <Image src={this.state.clickedPhoto} size='huge' fluid />
-      }
-    }
-
-    // const renderDimmer = () => {
-    //   if (this.state.clickedPhoto !== '') {
-    //     return
-    //     <Dimmer />
-    //   }
-    // }
-
 
     return(
       <Fragment>
@@ -42,7 +29,7 @@ class SearchResultsContainer extends Component {
           <SearchBar />
 
 
-          {this.state.clickedPhoto !== '' ? <Image src={this.state.clickedPhoto} size='huge' fluid /> : null}
+          {this.state.clickedPhoto !== '' ? <Image src={this.state.clickedPhoto} id={this.state.clickedPhoto} size='huge' onClick={ (e)=>this.closeImage(e) } /> : null}
 
           { this.state.clickedPhoto !== '' ? <Dimmer/> : null }
 

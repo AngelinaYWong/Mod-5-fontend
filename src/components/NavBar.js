@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Button, Header, Icon, Menu, Segment, Sidebar, Sticky } from 'semantic-ui-react';
+import { Button, Header, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchResultsContainer from './SearchResultsContainer';
 import Board from './Board';

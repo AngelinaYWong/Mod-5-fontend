@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image, Dimmer } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';

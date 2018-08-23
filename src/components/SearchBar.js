@@ -28,7 +28,6 @@ class SearchBar extends Component {
         }
       })
       this.props.makeSearch(searchResults);
-      console.log(data)
     });
   }
 
