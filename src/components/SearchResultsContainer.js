@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import SearchBar from './SearchBar';
 import { Image, Segment } from 'semantic-ui-react';
+import Dimmer from './Dimmer';
 // import Lightbox from 'react-images';
 
 class SearchResultsContainer extends Component {
@@ -14,18 +15,26 @@ class SearchResultsContainer extends Component {
     this.setState({ clickedPhoto: e.target.id })
   }
 
-  handleShow = () => this.setState({ active: true })
-  handleHide = () => this.setState({ active: false })
+
 
   render() {
 
-    const { active } = this.state
+
 
     const renderLargeImage = () => {
       if (this.state.clickedPhoto !== '') {
-        return <Image src={this.state.clickedPhoto} size='huge' fluid />
+        return
+        <Image src={this.state.clickedPhoto} size='huge' fluid />
       }
     }
+
+    // const renderDimmer = () => {
+    //   if (this.state.clickedPhoto !== '') {
+    //     return
+    //     <Dimmer />
+    //   }
+    // }
+
 
     return(
       <Fragment>
@@ -33,7 +42,9 @@ class SearchResultsContainer extends Component {
           <SearchBar />
 
 
-          { renderLargeImage() }
+          {this.state.clickedPhoto !== '' ? <Image src={this.state.clickedPhoto} size='huge' fluid /> : null}
+
+          { this.state.clickedPhoto !== '' ? <Dimmer/> : null }
 
 
           <div id="image-list">

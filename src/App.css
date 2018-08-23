@@ -59,9 +59,21 @@
 }
 
 .ui.fluid {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   right: 25%;
   background: black;
   outline: red;
+}
+
+#dimmer {
+  background:black;
+  opacity:0.5;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 1
+  /* display:none; */
 }
