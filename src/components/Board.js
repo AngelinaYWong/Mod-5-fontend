@@ -29,7 +29,7 @@ class Board extends Component {
   displayPictures = () => {
 
     let dinosaur = this.state.pictures.map((image) =>
-    <Card>
+    <Card id="boardCard">
       <Image src={image.src} />
     </Card>)
 

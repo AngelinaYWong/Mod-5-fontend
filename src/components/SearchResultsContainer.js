@@ -28,7 +28,6 @@ class SearchResultsContainer extends Component {
 
           <SearchBar />
 
-
           {this.state.clickedPhoto !== '' ? <Image src={this.state.clickedPhoto} id={this.state.clickedPhoto} size='huge' onClick={ (e)=>this.closeImage(e) } /> : null}
 
           { this.state.clickedPhoto !== '' ? <Dimmer/> : null }

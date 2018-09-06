@@ -34,7 +34,7 @@
 
 #image-list {
   z-index: -1;
-  padding-top: 70px;
+  padding-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -44,7 +44,7 @@
   /* grid-template-columns: 50vw 50vw;
   grid-template-areas: "l r"; */
   text-align: center;
-  background-color: #fff8dd;
+  background-color: #fcfad4;
   min-height: 100vh;
 }
 
@@ -60,10 +60,12 @@
 
 .ui.huge {
   z-index: 2;
-  position: absolute;
+  position: fixed;
+  top: 10vh;
   right: 25vw;
   background: black;
   outline: red;
+  height:100vh;
 }
 
 #dimmer {
@@ -75,6 +77,8 @@
   width:100%;
   height:100%;
   z-index: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
   overflow: hidden;
   /* display:none; */
 }

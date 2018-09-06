@@ -17,8 +17,8 @@ class App extends Component {
       <React.Fragment>
 
         <Header as='h2'>
-          <Icon name='images outline' />
-          <Header.Content>Mood Board</Header.Content>
+          <Icon name='eye' />
+          <Header.Content>Vision Board</Header.Content>
         </Header>
 
         <NavBar />

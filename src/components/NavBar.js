@@ -101,8 +101,6 @@ class NavBar extends Component {
 
                 </Switch> */}
 
-
-
             </Segment>
 
           </Sidebar.Pusher>
