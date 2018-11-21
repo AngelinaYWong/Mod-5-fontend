@@ -14,7 +14,8 @@ class ImageCard extends Component {
 
       <div id="container" className="image-card">
 
-        <ImageOverlay className="overlay" imgId={ this.props.images.id }
+        <ImageOverlay className="overlay"
+          imgId={ this.props.images.id }
           name={ this.props.images.name }
           imageLink={ this.props.images.image || this.props.images.src }/>
 
