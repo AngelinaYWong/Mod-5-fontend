@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheets/imagecard.css';
 import ImageOverlay from './ImageOverlay';
-// import Lightbox from 'react-images';
+
 
 
 class ImageCard extends Component {

@@ -4,7 +4,7 @@ import ImageCard from './ImageCard';
 import SearchBar from './SearchBar';
 import { Image } from 'semantic-ui-react';
 import Dimmer from './Dimmer';
-// import Lightbox from 'react-images';
+
 
 class SearchResultsContainer extends Component {
   state = {

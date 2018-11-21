@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Image, Reveal } from 'semantic-ui-react';
 import { connect } from 'react-redux'
 import '../stylesheets/imagecard.css';
 

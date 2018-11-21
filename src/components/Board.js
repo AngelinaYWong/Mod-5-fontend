@@ -11,6 +11,7 @@ class Board extends Component {
   state = {
     pictures: [],
     background: '#fff',
+    boardId: [],
   }
 
   componentDidMount() {
