@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { getBoard } from '../actions/index';
 import { SketchPicker } from 'react-color';
@@ -32,6 +32,7 @@ class Board extends Component {
     let dinosaur = this.state.pictures.map((image) =>
     <Card id="boardCard">
       <Image src={image.src} />
+      <id id={image.id} />
     </Card>)
 
     return dinosaur
