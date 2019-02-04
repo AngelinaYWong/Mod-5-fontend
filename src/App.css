@@ -54,7 +54,8 @@
 }
 
 .ui.header {
-  background-color: black;
+  background-color: #494d54;
+  /* background-color: black; */
   color: white;
 }
 
