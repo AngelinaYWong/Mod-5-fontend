@@ -13,7 +13,8 @@
   height: 150px;
   padding: 2px;
   width: 100vw;
-  color: white;
+  color: #f7f9e5;
+  /* color: white; */
   position: absolute;
 }
 
