@@ -7,10 +7,12 @@ class BoardCard extends Component {
   render() {
     return (
       <Card id="boardCard">
-        <Image src={image.src} />
-        <id id={image.id} />
+        <Image src={this.props.src} />
+        <id id={this.props.id} />
       </Card>
     )
   }
 
 }
+
+export default BoardCard;
