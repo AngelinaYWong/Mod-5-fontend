@@ -34,10 +34,32 @@ class Board extends Component {
     })
   }
 
+  onClick = (id) => {
+    fetch(`http://localhost:4000/api/v1/images/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        accept: 'application/json'
+      }
+      // body: JSON.stringify({
+      //   image: {name, ImgId, src}
+      // })
+    })
+    .then(r => r.json())
+    .then( data => this.setState({pictures: data.sort((a,b) => {
+      return a.id - b.id
+    })
+  })
+)
+    .then(r => console.log(r))
+    .catch(r => console.log(r))
+  }
+
   displayPictures = () => {
 
     let dinosaur = this.state.pictures.map((image) =>
-    <BoardCard src={image.src} id={image.id}/>
+    <BoardCard onClick={this.onClick} src={image.src} id={image.id}/>
     // <Card id="boardCard">
     //   <Image src={image.src} />
     //   <id id={image.id} />
