@@ -24,7 +24,13 @@ class Board extends Component {
     this.props.getBoard(this.props.selectedBoard)
     fetch(`http://localhost:4000/api/v1/boards/${this.props.selectedBoard}`)
     .then(r=>r.json())
-    .then((r) => this.setState({ pictures: r.images }))
+    .then((r) => {
+      console.log(r)
+      this.setState({ pictures: r.images.sort((a,b) => {
+        return a.id - b.id
+      })
+     })
+    })
   }
 
   displayPictures = () => {

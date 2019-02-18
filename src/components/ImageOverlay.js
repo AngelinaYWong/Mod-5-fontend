@@ -43,7 +43,7 @@ class ImageOverlay extends Component {
   render() {
     return (
       <div className="overlay">
-        <button onClick={this.handleClick}>[+]</button>
+        <button onClick={this.handleClick}>+</button>
       </div>
     )
   }
