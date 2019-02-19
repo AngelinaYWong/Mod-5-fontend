@@ -16,8 +16,7 @@ class Board extends Component {
   }
 
   componentDidMount() {
-    // console.log('component',this.props.selectedBoard)
-    // console.log(this.props)
+
     let getColor = localStorage.getItem('color')
     if (getColor)
       {this.setState({background: getColor})}
@@ -26,9 +25,9 @@ class Board extends Component {
     fetch(`http://localhost:4000/api/v1/boards/${this.props.selectedBoard}`)
     .then(r=>r.json())
     .then((r) => {
-      console.log(r)
+      // console.log(r)
       this.setState({ pictures: r.images.sort((a,b) => {
-        return a.id - b.id
+        return b.id - a.id
       })
      })
     })
@@ -48,7 +47,7 @@ class Board extends Component {
     })
     .then(r => r.json())
     .then( data => this.setState({pictures: data.sort((a,b) => {
-      return a.id - b.id
+      return b.id - a.id
     })
   })
 )
@@ -58,14 +57,10 @@ class Board extends Component {
 
   displayPictures = () => {
 
-    let dinosaur = this.state.pictures.map((image) =>
+    let allPictures = this.state.pictures.map((image) =>
     <BoardCard onClick={this.onClick} src={image.src} id={image.id}/>
-    // <Card id="boardCard">
-    //   <Image src={image.src} />
-    //   <id id={image.id} />
-    // </Card>)
-  )
-    return dinosaur
+    )
+    return allPictures
   }
 
   handleChangeComplete = (color) => {
@@ -84,6 +79,7 @@ class Board extends Component {
         { this.displayPictures() }
 
         <SketchPicker color={ this.state.background } onChange={ this.handleChangeComplete }/>
+
 
       </div>
     )
