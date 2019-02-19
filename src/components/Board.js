@@ -33,6 +33,7 @@ class Board extends Component {
     })
   }
 
+
   onClick = (id) => {
     fetch(`http://localhost:4000/api/v1/images/${id}`, {
       method: 'DELETE',
@@ -41,16 +42,13 @@ class Board extends Component {
         'Access-Control-Allow-Origin':'*',
         accept: 'application/json'
       }
-      // body: JSON.stringify({
-      //   image: {name, ImgId, src}
-      // })
     })
-    .then(r => r.json())
-    .then( data => this.setState({pictures: data.sort((a,b) => {
-      return b.id - a.id
-    })
-  })
-)
+      .then(r => r.json())
+      .then(data => this.setState({pictures: data.sort((a,b) => {
+        return b.id - a.id
+          })
+        })
+      )
     .then(r => console.log(r))
     .catch(r => console.log(r))
   }
