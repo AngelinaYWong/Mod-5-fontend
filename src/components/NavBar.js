@@ -89,18 +89,6 @@ class NavBar extends Component {
 
               { renderComponent() }
 
-                {/* <Switch>
-
-                  <Route exact path='/'/>
-
-                  <Route path='/profile' component={ Profile } />
-
-                  <Route path='/board' component={ Board } />
-
-                  <Route path='/search' component={SearchResultsContainer} />
-
-                </Switch> */}
-
             </Segment>
 
           </Sidebar.Pusher>
@@ -111,6 +99,19 @@ class NavBar extends Component {
     )
   }
 }
+
+{/* <Switch>
+
+  <Route exact path='/'/>
+
+  <Route path='/profile' component={ Profile } />
+
+  <Route path='/board' component={ Board } />
+
+  <Route path='/search' component={SearchResultsContainer} />
+
+</Switch> */}
+
 // const mapDispatchToProps = (dispatch) => {
 //   return {
 //     showBoards: () => { dispatch(showBoards())},
