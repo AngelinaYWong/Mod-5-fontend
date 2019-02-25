@@ -58,15 +58,17 @@ class Board extends Component {
     let allPictures = this.state.pictures.map((image) =>
     <BoardCard onClick={this.onClick} src={image.src} id={image.id}/>
     )
+
     return allPictures
   }
 
   handleChangeComplete = (color) => {
     this.setState({ background: color.hex }, () => {
-      console.log(this.state.background)
+      // console.log(this.state.background)
       if (color)
       { localStorage.setItem('color', color.hex) }
-    })}
+    })
+  }
 
   render() {
 
@@ -78,11 +80,11 @@ class Board extends Component {
 
         <SketchPicker color={ this.state.background } onChange={ this.handleChangeComplete }/>
 
-
       </div>
     )
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {
