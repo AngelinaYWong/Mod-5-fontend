@@ -100,6 +100,15 @@ class NavBar extends Component {
   }
 }
 
+const mapStateToProps  = (state) => {
+  return {
+    clickedView: state.clickedView
+  }
+}
+
+
+export default connect(mapStateToProps, null)(NavBar);
+
 {/* <Switch>
 
   <Route exact path='/'/>
@@ -118,12 +127,3 @@ class NavBar extends Component {
 //     showSearchContainer: () => { dispatch(showSearchContainer())}
 //   }
 // }
-
-const mapStateToProps  = (state) => {
-  return {
-    clickedView: state.clickedView
-  }
-}
-
-
-export default connect(mapStateToProps, null)(NavBar);
