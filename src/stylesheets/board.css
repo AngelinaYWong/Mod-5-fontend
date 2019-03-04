@@ -26,6 +26,7 @@
   top: 4em;
   left: 10em;
   background: transparent;
+  border-radius: 0.2em;
 }
 
 /*  button sliding into view animation link https://codepen.io/RazorXio/pen/gMaoOW*/
