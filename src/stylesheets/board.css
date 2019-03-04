@@ -28,6 +28,8 @@
   background: transparent;
 }
 
+/*  button sliding into view animation link https://codepen.io/RazorXio/pen/gMaoOW*/
+
 #BoardImageContainer {
   z-index: -1;
   padding-top: 70px;
