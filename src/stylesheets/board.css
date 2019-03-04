@@ -25,6 +25,7 @@
   position: relative;
   top: 4em;
   left: 10em;
+  background: transparent;
 }
 
 #BoardImageContainer {

@@ -20,7 +20,5 @@ class BoardCard extends Component {
   }
 }
 
-// style={{zIndex: 2, position: "relative", top: "50px", left: "150px"}}
-
 
 export default BoardCard;
